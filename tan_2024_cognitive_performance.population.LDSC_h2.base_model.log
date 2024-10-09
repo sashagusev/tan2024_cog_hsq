@@ -1,0 +1,32 @@
+*********************************************************************
+* LD Score Regression (LDSC)
+* Version 1.0.1
+* (C) 2014-2019 Brendan Bulik-Sullivan and Hilary Finucane
+* Broad Institute of MIT and Harvard / MIT Department of Mathematics
+* GNU General Public License v3
+*********************************************************************
+Call: 
+./ldsc.py \
+--h2 tan_2024_cognitive_performance.population.munged.sumstats.gz \
+--ref-ld-chr ./eur_w_ld_chr// \
+--out tan_2024_cognitive_performance.population.LDSC_h2.base_model \
+--w-ld-chr ./eur_w_ld_chr// 
+
+Beginning analysis at Wed Oct  9 16:12:35 2024
+Reading summary statistics from tan_2024_cognitive_performance.population.munged.sumstats.gz ...
+Read summary statistics for 1045706 SNPs.
+Reading reference panel LD Score from ./eur_w_ld_chr//[1-22] ... (ldscore_fromlist)
+Read reference panel LD Scores for 1290028 SNPs.
+Removing partitioned LD Scores with zero variance.
+Reading regression weight LD Score from ./eur_w_ld_chr//[1-22] ... (ldscore_fromlist)
+Read regression weight LD Scores for 1290028 SNPs.
+After merging with reference panel LD, 1040565 SNPs remain.
+After merging with regression SNP LD, 1040565 SNPs remain.
+Using two-step estimator with cutoff at 30.
+Total Observed scale h2: 0.1855 (0.0161)
+Lambda GC: 1.1651
+Mean Chi^2: 1.1772
+Intercept: 1.0626 (0.0055)
+Ratio: 0.3532 (0.0309)
+Analysis finished at Wed Oct  9 16:12:47 2024
+Total time elapsed: 12.7s

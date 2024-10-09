@@ -1,0 +1,50 @@
+*********************************************************************
+* LD Score Regression (LDSC)
+* Version 1.0.1
+* (C) 2014-2019 Brendan Bulik-Sullivan and Hilary Finucane
+* Broad Institute of MIT and Harvard / MIT Department of Mathematics
+* GNU General Public License v3
+*********************************************************************
+Call: 
+./munge_sumstats.py \
+--signed-sumstats population_Z,0 \
+--out tan_2024_cognitive_performance.population.munged \
+--merge-alleles ./eur_w_ld_chr//w_hm3.snplist \
+--n-min 9889.0 \
+--N-col population_N \
+--sumstats tan_2024_cognitive_performance.gz \
+--p population_pval 
+
+Interpreting column names as follows:
+population_N:	Sample size
+SNP:	Variant ID (e.g., rs number)
+A1:	Allele 1, interpreted as ref allele for signed sumstat.
+A2:	Allele 2, interpreted as non-ref allele for signed sumstat.
+population_Z:	Directional summary statistic as specified by --signed-sumstats.
+population_pval:	p-Value
+
+Reading list of SNPs for allele merge from ./eur_w_ld_chr//w_hm3.snplist
+Read 1217311 SNPs for allele merge.
+Reading sumstats from tan_2024_cognitive_performance.gz into memory 5000000 SNPs at a time.
+Read 6027096 SNPs from --sumstats file.
+Removed 4890153 SNPs not in --merge-alleles.
+Removed 0 SNPs with missing values.
+Removed 0 SNPs with INFO <= 0.9.
+Removed 0 SNPs with MAF <= 0.01.
+Removed 0 SNPs with out-of-bounds p-values.
+Removed 0 variants that were not SNPs or were strand-ambiguous.
+1136943 SNPs remain.
+Removed 0 SNPs with duplicated rs numbers (1136943 SNPs remain).
+Removed 91236 SNPs with N < 9889.0 (1045707 SNPs remain).
+Median value of SIGNED_SUMSTATS was -0.00279282959428, which seems sensible.
+Removed 1 SNPs whose alleles did not match --merge-alleles (1045706 SNPs remain).
+Writing summary statistics for 1217311 SNPs (1045706 with nonmissing beta) to tan_2024_cognitive_performance.population.munged.sumstats.gz.
+
+Metadata:
+Mean chi^2 = 1.179
+Lambda GC = 1.165
+Max chi^2 = 28.121
+0 Genome-wide significant SNPs (some may have been removed by filtering).
+
+Conversion finished at Wed Oct  9 16:12:34 2024
+Total time elapsed: 1.0m:21.5s

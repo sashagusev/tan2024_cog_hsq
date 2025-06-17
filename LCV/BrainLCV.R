@@ -43,13 +43,12 @@ process_and_run_LCV = function( trait1File , trait2File , n1 , n2 , ldscoresFile
   return(LCV)
 }
 
-
 # Volume <-> IQ
 LCV = process_and_run_LCV ( trait1 = "Nawaz_ICV.HM3.sumstats.gz" , trait2 = "Lee_CP.HM3.sumstats.gz" , n1 = 79174 , n2 = 257841 , ldscoresFile = "all.l2.round.ldscore.gz" )
 sprintf("Volume -> IQ : Estimated posterior gcp=%.2f(%.2f), log10(p)=%.1f; estimated rho=%.2f(%.2f)",LCV$gcp.pm, LCV$gcp.pse, log(LCV$pval.gcpzero.2tailed)/log(10), LCV$rho.est, LCV$rho.err)
 # Volume <-> EA
 LCV = process_and_run_LCV ( trait1 = "Nawaz_ICV.HM3.sumstats.gz" , trait2 = "Okbay_EA.HM3.sumstats.gz" , n1 = 79174 , n2 = 3037499 - 2272216 , ldscoresFile = "all.l2.round.ldscore.gz" )
-sprintf("Edu -> IQ : Estimated posterior gcp=%.2f(%.2f), log10(p)=%.1f; estimated rho=%.2f(%.2f)",LCV$gcp.pm, LCV$gcp.pse, log(LCV$pval.gcpzero.2tailed)/log(10), LCV$rho.est, LCV$rho.err)
+sprintf("Volume -> EA : Estimated posterior gcp=%.2f(%.2f), log10(p)=%.1f; estimated rho=%.2f(%.2f)",LCV$gcp.pm, LCV$gcp.pse, log(LCV$pval.gcpzero.2tailed)/log(10), LCV$rho.est, LCV$rho.err)
 # IQ <-> EA
 LCV = process_and_run_LCV ( trait1 = "Lee_CP.HM3.sumstats.gz" , trait2 = "Okbay_EA.HM3.sumstats.gz" , n1 = 257841 , n2 = 3037499 - 2272216 , ldscoresFile = "all.l2.round.ldscore.gz" )
 sprintf("IQ -> EA : Estimated posterior gcp=%.2f(%.2f), log10(p)=%.1f; estimated rho=%.2f(%.2f)",LCV$gcp.pm, LCV$gcp.pse, log(LCV$pval.gcpzero.2tailed)/log(10), LCV$rho.est, LCV$rho.err)
